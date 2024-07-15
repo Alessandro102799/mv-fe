@@ -1,0 +1,166 @@
+
+@import '../../../../src/style/colors.scss';
+
+.sidenav {
+    background: $white;
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0.938rem 0.938rem 0 0.938rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 0.8rem;
+} 
+
+.logo {
+    background: $white;
+    text-align: center;
+    width: 3rem;
+    min-width: 3rem;
+    border-radius: 0.313rem;
+    padding: 0.313rem;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+    border: none;
+}
+
+.logo-text-monkey {
+    margin-left: 1.5rem;
+    font-size: 24px;
+    font-weight: 700;
+    color: $black
+}
+
+.logo-text-voice {
+    margin-left: 0.5rem;
+    font-size: 24px;
+    font-weight: 700;
+    color: $black
+}
+
+.btn-close {
+    margin-left: 50px;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+}
+
+.fa-times {
+    color: $black;
+    font-size: 24px;
+}
+
+.sidenav-collapsed {
+    width: 20.5625rem;
+}
+
+.sidenav-nav {
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 3.65rem);
+    cursor: pointer;
+
+    .sidenav-nav-item {
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        .sidenav-nav-link {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: $black;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+
+            .sidenav-link-icon {
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sidenav-link-text {
+                margin-left: 1.5rem;
+            }
+        }
+    }
+
+    .sidenav-nav-item:hover {
+        background-color: $body;
+        border-radius: 0.625rem;
+        color: $black
+    }
+}
+
+.active {
+    background-color: $primary;
+
+    .sidenav-link-icon,
+    .sidenav-link-text {
+        color: $white
+    }
+}
+
+//da qui inizia lo stile per la barra di ricerca
+.container-search {
+    padding: 0 0.938rem 0 0.938rem;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.input-form-field-search {
+    width: 100% !important;
+    align-items: center;
+}
+
+.input-form-field-search::ng-deep.mat-mdc-text-field-wrapper {
+    background-color: $white;
+    border-color: $white;
+    border-radius: 0.625rem;
+}
+
+.input-form-field-search::ng-deep.mat-mdc-text-field-focused {
+    background-color: $white;
+    border-color: $white;
+    border-radius: 0.625rem;
+}
+
+.mat-label {
+    color: $color_placeholder;
+}
+
+.input-form-field-search::ng-deep.mdc-line-ripple::before{
+    border: none
+}
+
+.input-form-field-search::ng-deep.mdc-line-ripple::after{
+    border: none
+}
+
+.logo-search {
+    color: $white;
+    font-size: 24px;
+    margin-bottom: 3.2rem;
+    cursor: pointer;
+}

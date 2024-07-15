@@ -1,0 +1,161 @@
+<div class="cards">
+    <!-- single card users -->
+    <div class="single-card">
+        <div class="top-card">
+            <div class="container-icon">
+                <div class="background-icon">
+                    <i class="fal fa-user"></i>
+                </div>
+            </div>
+            <div class="total-item">
+                <div class="container-total">
+                    <span class="text-total">Total Users</span>
+                    <span class="number-total">{{users.length}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="bottom-card">
+            <div class="avatar-group">
+                @if(users.length > 0) {
+                    @for (avatar of users; track avatar; let i = $index) {
+                        @if(widthOfPage >= 1800 || widthOfPage === 0) {
+                            <div *ngIf="i<14" class="avatar">
+                                <div class="initials">{{
+                                    i<13 ? avatar.username.charAt(0) : "+".concat((users.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else if (widthOfPage >= 1400 && widthOfPage <= 1799) {
+                            <div *ngIf="i<10" class="avatar">
+                                <div class="initials">{{
+                                    i<9 ? avatar.username.charAt(0) : "+".concat((users.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else if (widthOfPage >= 1100 && widthOfPage <= 1399) {
+                            <div *ngIf="i<8" class="avatar">
+                                <div class="initials">{{
+                                    i<7 ? avatar.username.charAt(0) : "+".concat((users.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else {
+                            <div *ngIf="i<5" class="avatar">
+                                <div class="initials">{{
+                                    i<4 ? avatar.username.charAt(0) : "+".concat((users.length-i).toString())
+                                }}</div>
+                            </div>
+                        }
+                    }
+                } @else {
+                    <span class="no-users">No Users.</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- single card users -->
+    <div class="single-card">
+        <div class="top-card">
+            <div class="container-icon">
+                <div class="background-icon">
+                    <i class="fal fa-users"></i>
+                </div>
+            </div>
+            <div class="total-item">
+                <div class="container-total">
+                    <span class="text-total">Total Subscribers</span>
+                    <span class="number-total">{{subscribers.length}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="bottom-card">
+            <div class="avatar-group">
+                @if(subscribers.length > 0) {
+                    @for (avatar of subscribers; track avatar; let i = $index) {
+                        @if(widthOfPage >= 1800 || widthOfPage === 0) {
+                            <div *ngIf="i<14" class="avatar">
+                                <div class="initials">{{
+                                    i<13 ? avatar.username.charAt(0) : "+".concat((subscribers.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else if (widthOfPage >= 1400 && widthOfPage <= 1799) {
+                            <div *ngIf="i<10" class="avatar">
+                                <div class="initials">{{
+                                    i<9 ? avatar.username.charAt(0) : "+".concat((subscribers.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else if (widthOfPage >= 1100 && widthOfPage <= 1399) {
+                            <div *ngIf="i<8" class="avatar">
+                                <div class="initials">{{
+                                    i<7 ? avatar.username.charAt(0) : "+".concat((subscribers.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else {
+                            <div *ngIf="i<5" class="avatar">
+                                <div class="initials">{{
+                                    i<4 ? avatar.username.charAt(0) : "+".concat((subscribers.length-i).toString())
+                                }}</div>
+                            </div>
+                        }
+                    }
+                } @else {
+                    <span class="no-users">No Subscribers.</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- single card users -->
+    <div class="single-card">
+        <div class="top-card">
+            <div class="container-icon">
+                <div class="background-icon">
+                    <i class="fal fa-phone"></i>
+                </div>
+            </div>
+            <div class="total-item">
+                <div class="container-total">
+                    <span class="text-total">Total Provisionings</span>
+                    <span class="number-total">{{provisionings.length}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="bottom-card">
+            <div class="avatar-group">
+                @if(provisionings.length > 0) {
+                    @for (avatar of provisionings; track avatar; let i = $index) {
+                        <!-- questa parte di codice serve per diminuire o aumentare il numero di avatar presenti in base alla dimensione della pagina-->
+                        @if(widthOfPage >= 1800 || widthOfPage === 0) {
+                            <div *ngIf="i<14" class="avatar">
+                                <div class="initials">{{
+                                    i<13 ? avatar.username.charAt(0) : "+".concat((provisionings.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else if (widthOfPage >= 1400 && widthOfPage <= 1799) {
+                            <div *ngIf="i<10" class="avatar">
+                                <div class="initials">{{
+                                    i<9 ? avatar.username.charAt(0) : "+".concat((provisionings.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else if (widthOfPage >= 1100 && widthOfPage <= 1399) {
+                            <div *ngIf="i<8" class="avatar">
+                                <div class="initials">{{
+                                    i<7 ? avatar.username.charAt(0) : "+".concat((provisionings.length-i).toString())
+                                }}</div>
+                            </div>
+                        }@else {
+                            <div *ngIf="i<5" class="avatar">
+                                <div class="initials">{{
+                                    i<4 ? avatar.username.charAt(0) : "+".concat((provisionings.length-i).toString())
+                                }}</div>
+                            </div>
+                        }
+                    }
+                } @else {
+                    <span class="no-item">No Provisionings.</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>

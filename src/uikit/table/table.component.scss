@@ -1,0 +1,35 @@
+@import '../../style/colors.scss';
+
+.container {
+    width: 100%;
+    background-color: $color_window;
+    padding: 2rem 2rem 0 2rem;
+    border-radius: 1rem;
+
+    .container-table {
+        background-color: $color_window;
+    }
+
+    .container-paginator {
+        background-color: $color_window;
+    }
+}
+
+.name-column {
+    font-size: 15px;
+    color: $color_placeholder;
+}
+
+.status-online {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $status_online;
+    animation:1.5s blinker linear infinite;
+}
+
+@keyframes blinker {
+    0% {opacity: 1.0;}
+    50% {opacity: 0.0;}
+    100% {opacity: 1.0;}
+}

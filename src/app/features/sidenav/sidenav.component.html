@@ -1,0 +1,28 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">MV</button>
+        <div class="logo-text-monkey" @fadeInOut *ngIf="collapsed">MonkeY</div>
+        <div class="logo-text-voice" @fadeInOut *ngIf="collapsed">Voice</div>
+        <button class="btn-close" @fadeInOut @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <!-- <div class="container-search">
+        @if(collapsed) {
+            <mat-form-field class="input-form-field-search">
+            <mat-label class="mat-label">Search menu or submenu</mat-label>
+            <input class="input-search" matInput>
+          </mat-form-field>
+        } @else {
+            <i (click)="toggleCollapse()" class="fal fa-search logo-search " ></i>
+        }
+    </div> -->
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [routerLink]="data.routerLink" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
