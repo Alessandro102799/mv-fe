@@ -1,6 +1,10 @@
 @import '../../../style/colors.scss';
 @import '../../../style/window-component.scss';
 
+app-title-page {
+    width: 100%;
+    height: 5%;
+}
 app-cards {
     width: 100%;
     height: 25%;
@@ -8,5 +12,5 @@ app-cards {
 
 app-table {
     width: 100%;
-    height: 75%;
+    height: 60%;
 }
