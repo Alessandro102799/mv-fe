@@ -10,6 +10,9 @@
     transition: all .5s ease;
     background: $body;
     padding: 1.8rem;
+    flex-grow: 1;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 .body-trimmed {
