@@ -18,7 +18,6 @@ export class DashboardComponent {
     { username: 'Paolo' },
     { username: 'Calogero' },
     { username: 'Carlo' },
-    { username: 'Suca' },
     { username: 'Alessandro' },
     { username: 'Badagliacco' },
     { username: 'Francesco' },
@@ -46,7 +45,6 @@ export class DashboardComponent {
     { username: 'Paolo' },
     { username: 'Calogero' },
     { username: 'Carlo' },
-    { username: 'Suca' },
     { username: 'Alessandro' },
     { username: 'Badagliacco' },
     { username: 'Francesco' },
@@ -57,7 +55,5 @@ export class DashboardComponent {
     { username: 'Francesco' },
     { username: 'Massimo' },
     { username: 'Paolo' }
-  ];
-
-  
+  ];  
 }

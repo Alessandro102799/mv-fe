@@ -17,11 +17,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {username: 'Alessandro', domain: 'Via Aloi', contact: '3802091212', expires: '14/12/2021', userAgent: 'Pippo'},
   {username: 'Carlo', domain: 'Belmonte Chiavelli', contact: '3802091212', expires: '07/11/2021', userAgent: 'Pluto'},
   {username: 'Alessandro', domain: 'Via Aloi', contact: '3802091212', expires: '14/12/2021', userAgent: 'Pippo'},
-  {username: 'Alessandro', domain: 'Via Aloi', contact: '3802091212', expires: '14/12/2021', userAgent: 'Pippo'},
-  {username: 'Carlo', domain: 'Belmonte Chiavelli', contact: '3802091212', expires: '07/11/2021', userAgent: 'Pluto'},
-  {username: 'Alessandro', domain: 'Via Aloi', contact: '3802091212', expires: '14/12/2021', userAgent: 'Pippo'},
-  {username: 'Carlo', domain: 'Belmonte Chiavelli', contact: '3802091212', expires: '07/11/2021', userAgent: 'Pluto'},
-  {username: 'Alessandro', domain: 'Via Aloi', contact: '3802091212', expires: '14/12/2021', userAgent: 'Pippo'}
 ];
 
 @Component({

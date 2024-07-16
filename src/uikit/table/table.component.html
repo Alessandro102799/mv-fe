@@ -1,4 +1,4 @@
-<div class="container"> 
+<div class="container">
     <table mat-table [dataSource]="dataSource" class="container-table">
         <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef class="name-column"> Status </th>
@@ -34,6 +34,8 @@
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <div *matNoDataRow class="no-data">No Data.</div>
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10]"
                     showFirstLastButtons

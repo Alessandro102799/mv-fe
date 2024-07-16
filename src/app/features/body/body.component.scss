@@ -10,6 +10,7 @@
     transition: all .5s ease;
     background: $body;
     padding: 1.8rem;
+    //da qui in poi questo direttive css servono per adattare il body in base al numero di componente che c'è al suo interno
     flex-grow: 1;
     overflow: auto;
     box-sizing: border-box;

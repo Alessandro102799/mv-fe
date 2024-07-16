@@ -5,7 +5,7 @@
     background-color: $color_window;
     padding: 2rem 2rem 0 2rem;
     border-radius: 1rem;
-    margin-top: 1%;
+    margin-top: 1%; //serve per distanziare la table dall cards
     .container-table {
         width: 100%;
         background-color: $color_window;
@@ -13,6 +13,10 @@
 
     .container-paginator {
         background-color: $color_window;
+    }
+
+    .no-data {
+        margin-top: 1rem;
     }
 }
 
