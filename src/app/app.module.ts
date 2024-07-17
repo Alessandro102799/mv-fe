@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NGRX_EFFECTS, metaReducers } from './store/connect';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
@@ -17,7 +17,14 @@ import { ServicesComponent } from './features/services/services.component';
 import { CallRoutingComponent } from './features/call-routing/call-routing.component';
 import { AuthenticationComponent } from './features/authentication/authentication.component';
 import { SystemComponent } from './features/system/system.component';
-import { CardsComponent } from '../uikit/cards/cards.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { reducers } from './store/connect';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ApiClient } from '../shared/client/apiClient';
+import { provideHttpClient } from '@angular/common/http';
+import { SubmenuComponent } from './features/sidenav/submenu/submenu.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +39,28 @@ import { CardsComponent } from '../uikit/cards/cards.component';
     ServicesComponent,
     CallRoutingComponent,
     AuthenticationComponent,
-    SystemComponent
+    SystemComponent,
+    SubmenuComponent
   ],
   imports: [
     UikitModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    StoreRouterConnectingModule.forRoot(),
+    EffectsModule.forRoot(NGRX_EFFECTS),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [
+    ApiClient,
+    provideHttpClient(),
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

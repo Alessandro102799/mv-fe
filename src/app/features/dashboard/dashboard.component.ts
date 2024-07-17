@@ -1,5 +1,5 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 interface Avatar {
   username: string;
@@ -10,6 +10,9 @@ interface Avatar {
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+
+  constructor(private readonly store: Store) {}
+
   users: Array<Avatar> = [
     { username: 'Alessandro' },
     { username: 'Badagliacco' },

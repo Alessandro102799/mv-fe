@@ -8,7 +8,7 @@ import { JSend } from './jsend.dto';
  * http options
  */
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-DOMAIN-ID': 1, 'X-ORGANIZATION-ID': 1 })
 };
 
 @Injectable()
