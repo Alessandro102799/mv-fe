@@ -1,19 +1,40 @@
+import { IMenu } from "../../../shared/model/menu/menu.model";
+
 //array di oggetti che permette di popolare il menu laterale della sidenav
-export const navbarData = [
+export const navbarData: IMenu[] = [
     {
         routerLink: 'dashboard',
         icon: 'fal fa-home',
-        label: 'Dashboard'
+        label: 'Dashboard',
+        expanded: false,
     },
     {
         routerLink: 'provisioning',
         icon: 'fal fa-suitcase',
-        label: 'Provisioning'
+        label: 'Provisioning',
+        expanded: false,
+        submenu: [
+            {
+                routerLink: 'provisioning',
+                label: 'Provisioning'
+            },
+            {
+                routerLink: 'Assets',
+                label: 'Assets'
+            }
+        ]
     },
     {
         routerLink: 'subscribers',
         icon: 'fal fa-users',
-        label: 'Subscribers'
+        label: 'Subscribers',
+        expanded: false,
+        submenu: [
+            {
+                routerLink: 'subscribers',
+                label: 'Subscribers'
+            }
+        ]
     },
     {
         routerLink: 'address-book',

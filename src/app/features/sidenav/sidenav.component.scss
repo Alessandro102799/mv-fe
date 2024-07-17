@@ -100,67 +100,66 @@
                 margin-left: 1.5rem;
             }
         }
+        .sidenav-nav-link:hover {
+            background-color: $sidenav_link;
+            color: $black;
+
+            .menu-collapse-icon {
+                color: $black
+            }
+        }
     }
 
-    .sidenav-nav-item:hover {
-        background-color: $body;
-        border-radius: 0.625rem;
-        color: $black
-    }
 }
 
 .active {
     background-color: $primary;
 
+    .menu-collapse-icon,
     .sidenav-link-icon,
     .sidenav-link-text {
         color: $white
     }
 }
 
-//da qui inizia lo stile per la barra di ricerca
-.container-search {
-    padding: 0 0.938rem 0 0.938rem;
-    margin: 0;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.active:hover {
+    background-color: $primary !important;
 }
 
-.input-form-field-search {
-    width: 100% !important;
-    align-items: center;
+.menu-collapse-icon {
+    font-size: 25px;
+    width: 2rem;
+    min-width: 2rem;
+    margin:  auto 0.5rem auto auto;
+    text-align: center;
+    color: $black
 }
 
-.input-form-field-search::ng-deep.mat-mdc-text-field-wrapper {
-    background-color: $white;
-    border-color: $white;
-    border-radius: 0.625rem;
-}
+.sublevel-nav {
+    list-style: none;
+    margin-left: 55px;
 
-.input-form-field-search::ng-deep.mat-mdc-text-field-focused {
-    background-color: $white;
-    border-color: $white;
-    border-radius: 0.625rem;
-}
+    .sublevel-nav-item {
+        .sublevel-nav-link {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: $black;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition:  all .3s ease;
 
-.mat-label {
-    color: $color_placeholder;
-}
+            .sublevel-link-icon {
+                font-size: 4px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
 
-.input-form-field-search::ng-deep.mdc-line-ripple::before{
-    border: none
-}
-
-.input-form-field-search::ng-deep.mdc-line-ripple::after{
-    border: none
-}
-
-.logo-search {
-    color: $white;
-    font-size: 24px;
-    margin-bottom: 3.2rem;
-    cursor: pointer;
+            .sublevel-link-text {
+                margin-left: 0.8rem;
+            }
+        }
+    }
 }

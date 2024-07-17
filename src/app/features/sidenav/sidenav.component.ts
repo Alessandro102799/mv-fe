@@ -1,6 +1,8 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { navbarData } from './nav-data';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { IMenu } from '../../../shared/model/menu/menu.model';
+import { Router } from '@angular/router';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -40,12 +42,13 @@ interface SideNavToggle {
 })
 export class SidenavComponent implements OnInit{
 
-  @Input() collapsed = false;
-  @Input() screenWidth = 0;
+  constructor(private readonly router: Router) {}
+
   @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter()
-  //collapsed = false;
-  //screenWidth = 0;
+  collapsed = false;
+  screenWidth = 0;
   navData = navbarData;
+  multiple: boolean = false;
 
   //listener che sta in ascolto ogni volta che ridimensioniamo la pagina, in modo tale da renderle il menu responsive
   @HostListener('window:resize', ['$event'])
@@ -58,7 +61,7 @@ export class SidenavComponent implements OnInit{
   }
 
   ngOnInit(): void {
-      this.screenWidth = window.innerWidth
+    this.screenWidth = window.innerWidth
   }
 
   toggleCollapse(): void {
@@ -66,8 +69,24 @@ export class SidenavComponent implements OnInit{
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
+
   closeSidenav(): void {
     this.collapsed = false;
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
+
+  handleClick(item: IMenu): void {
+    if(!this.multiple) {
+      for(let modelItem of this.navData) {
+        if(item !== modelItem && modelItem.expanded) {
+          modelItem.expanded = false
+        }
+      }
+    }
+    item.expanded = !item.expanded
+  }
+
+  getActiveClass(data: IMenu): string {
+    return this.router.url.includes(data.routerLink) ? 'active' : ''
   }
 }

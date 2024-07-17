@@ -7,22 +7,31 @@
             <i class="fal fa-times close-icon"></i>
         </button>
     </div>
-    <!-- <div class="container-search">
-        @if(collapsed) {
-            <mat-form-field class="input-form-field-search">
-            <mat-label class="mat-label">Search menu or submenu</mat-label>
-            <input class="input-search" matInput>
-          </mat-form-field>
-        } @else {
-            <i (click)="toggleCollapse()" class="fal fa-search logo-search " ></i>
-        }
-    </div> -->
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">
-            <a class="sidenav-nav-link" [routerLink]="data.routerLink" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="sidenav-nav-link" (click)="handleClick(data)" *ngIf="data.submenu && data.submenu.length > 0" [ngClass]="getActiveClass(data)">
+                <i class="sidenav-link-icon" (click)="toggleCollapse()" [class]="data.icon"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+                <i @fadeInOut *ngIf="data.submenu && collapsed" class="menu-collapse-icon" [ngClass]="!data.expanded ? 'fal fa-angle-right' : 'fal fa-angle-down'"></i>
+            </a>
+            <a class="sidenav-nav-link" 
+                *ngIf="!data.submenu || (data.submenu && data.submenu.length === 0)"
+                [routerLink]="data.routerLink" 
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact: true}">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
                 <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
             </a>
+            <div *ngIf="collapsed && data.submenu && data.submenu.length > 0" (click)="closeSidenav()">
+                <app-submenu
+                    [data]="data"
+                    [collapsed]="collapsed"
+                    [multiple]="multiple"
+                    [expanded]="data.expanded"
+                >
+                </app-submenu>
+
+            </div>
         </li>
     </ul>
 </div>
