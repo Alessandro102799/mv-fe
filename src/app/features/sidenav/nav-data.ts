@@ -59,7 +59,13 @@ export const navbarData: IMenu[] = [
     {
         routerLink: 'system',
         icon: 'fal fa-cogs',
-        label: 'System'
+        label: 'System',
+        submenu: [
+            {
+                routerLink: 'system/domain',
+                label: 'Domains'
+            }
+        ]
     },
     {
         routerLink: 'info',

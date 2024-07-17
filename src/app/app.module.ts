@@ -25,6 +25,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ApiClient } from '../shared/client/apiClient';
 import { provideHttpClient } from '@angular/common/http';
 import { SubmenuComponent } from './features/sidenav/submenu/submenu.component';
+import { DomainComponent } from './features/system/domain/domain.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SubmenuComponent } from './features/sidenav/submenu/submenu.component';
     CallRoutingComponent,
     AuthenticationComponent,
     SystemComponent,
-    SubmenuComponent
+    SubmenuComponent,
+    DomainComponent
   ],
   imports: [
     UikitModule,
