@@ -1,7 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { navbarData } from './nav-data';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { IMenu } from '../../../shared/model/menu/menu.model';
+import { MenuModel } from '../../../shared/model/menu/menu.model';
 import { Router } from '@angular/router';
 
 interface SideNavToggle {
@@ -75,7 +75,7 @@ export class SidenavComponent implements OnInit{
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
-  handleClick(item: IMenu): void {
+  handleClick(item: MenuModel): void {
     if(!this.multiple) {
       for(let modelItem of this.navData) {
         if(item !== modelItem && modelItem.expanded) {
@@ -86,7 +86,7 @@ export class SidenavComponent implements OnInit{
     item.expanded = !item.expanded
   }
 
-  getActiveClass(data: IMenu): string {
+  getActiveClass(data: MenuModel): string {
     return this.router.url.includes(data.routerLink) ? 'active' : ''
   }
 }

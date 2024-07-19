@@ -25,7 +25,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ApiClient } from '../shared/client/apiClient';
 import { provideHttpClient } from '@angular/common/http';
 import { SubmenuComponent } from './features/sidenav/submenu/submenu.component';
-import { DomainComponent } from './features/system/domain/domain.component';
+import { DomainComponent } from './features/system/domain/list-domain/domain.component';
+import { CreateDomainComponent } from './features/system/domain/create-domain/create-domain.component';
+import { FormDomainComponent } from './features/system/domain/form-domain/form-domain.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { DomainComponent } from './features/system/domain/domain.component';
     AuthenticationComponent,
     SystemComponent,
     SubmenuComponent,
-    DomainComponent
+    DomainComponent,
+    CreateDomainComponent,
+    FormDomainComponent
   ],
   imports: [
     UikitModule,

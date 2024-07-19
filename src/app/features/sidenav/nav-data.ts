@@ -1,7 +1,7 @@
-import { IMenu } from "../../../shared/model/menu/menu.model";
+import { MenuModel } from "../../../shared/model/menu/menu.model";
 
 //array di oggetti che permette di popolare il menu laterale della sidenav
-export const navbarData: IMenu[] = [
+export const navbarData: MenuModel[] = [
     {
         routerLink: 'dashboard',
         icon: 'fal fa-home',

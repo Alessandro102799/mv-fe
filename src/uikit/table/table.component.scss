@@ -25,6 +25,11 @@
     color: $color_placeholder;
 }
 
+.mat-mdc-row:hover {
+    cursor: pointer;
+    background-color: $white;
+}
+
 .status-online {
     width: 20px;
     height: 20px;

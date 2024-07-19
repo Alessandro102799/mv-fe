@@ -1,0 +1,65 @@
+@import '../../style/colors.scss';
+@import '../../style/window-component.scss';
+
+.container-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    .container {
+        display: flex;
+        width: 21rem;
+        justify-content: space-between;
+
+        .create {
+            width: 10rem;
+            height: 3rem;
+            background-color: $primary;
+            border-radius: 1rem;
+            display: flex;
+            border: none;
+            justify-content:space-around;
+            align-items: center;
+            padding: 0 0.5rem 0 0.5rem;
+            cursor: pointer;
+    
+            .fa-plus {
+                font-size: 20px;
+                color: $white;
+            }
+    
+            .text-create {
+                margin-top: 5px;
+                font-size: 20px;
+                color: $white;
+                font-weight: bold;
+            }
+        }
+    
+        .delete {
+            width: 10rem;
+            height: 3rem;
+            background-color: $white;
+            border-radius: 1rem;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            padding: 0 2rem 0 2rem;
+            border: 1px solid $delete;
+            cursor: pointer;
+    
+            .fa-trash {
+                font-size: 20px;
+                color: $delete;
+            }
+    
+            .text-delete {
+                margin-top: 5px;
+                font-size: 20px;
+                color: $delete;
+                font-weight: bold;
+            }
+        }
+    }
+
+    
+}

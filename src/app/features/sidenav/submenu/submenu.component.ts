@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IMenu } from '../../../../shared/model/menu/menu.model';
+import { MenuModel } from '../../../../shared/model/menu/menu.model';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 interface SideNavToggle {
@@ -42,7 +42,7 @@ interface SideNavToggle {
 })
 export class SubmenuComponent {
 
-  @Input() data: IMenu = {
+  @Input() data: MenuModel = {
     routerLink: '',
     icon: '',
     label: '',

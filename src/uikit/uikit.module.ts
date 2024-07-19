@@ -1,34 +1,37 @@
 import { NgModule } from "@angular/core";
 import { MatInputModule } from '@angular/material/input';
-import { InputTextComponent } from './input-text/input-text.component';
 import { TitlePageComponent } from './title-page/title-page.component';
 import { CardsComponent } from './cards/cards.component';
 import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from "@angular/material/table";
-import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {  MatPaginatorModule } from "@angular/material/paginator";
+import { ButtonCreateDeleteComponent } from './button-create-delete/button-create-delete.component';
 @NgModule({
   declarations: [
-    InputTextComponent,
     TitlePageComponent,
     CardsComponent,
-    TableComponent
+    TableComponent,
+    ButtonCreateDeleteComponent
   ],
   imports: [
     MatInputModule,
     BrowserModule,
     CommonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
   ],
   exports: [
     MatInputModule,
-    InputTextComponent,
+    MatCheckboxModule,
     TitlePageComponent,
     CardsComponent,
     TableComponent,
-    MatTableModule
+    MatTableModule,
+    ButtonCreateDeleteComponent
   ],
   providers: []
 })

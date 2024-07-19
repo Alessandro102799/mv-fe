@@ -9,7 +9,8 @@ import { ServicesComponent } from './features/services/services.component';
 import { CallRoutingComponent } from './features/call-routing/call-routing.component';
 import { AuthenticationComponent } from './features/authentication/authentication.component';
 import { SystemComponent } from './features/system/system.component';
-import { DomainComponent } from './features/system/domain/domain.component';
+import { DomainComponent } from './features/system/domain/list-domain/domain.component';
+import { CreateDomainComponent } from './features/system/domain/create-domain/create-domain.component';
 
 //ogni volta che dobbiamo aggiungere una rotta
 const routes: Routes = [
@@ -22,7 +23,10 @@ const routes: Routes = [
   {path: 'call-routing', component: CallRoutingComponent},
   {path: 'authentication', component: AuthenticationComponent},
   {path: '', component: SystemComponent},
+
+  //DOMAIN: LIST, CREATE AND UPDTATE
   {path: 'system/domain', component: DomainComponent},
+  {path: 'system/domain/create', component: CreateDomainComponent},
   {path: 'info', component: InfoComponent}
 ];
 

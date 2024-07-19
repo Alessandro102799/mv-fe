@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CreateDeleteModel } from '../../../../../shared/model/button-create-delete/create-delete.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-domain',
@@ -6,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './domain.component.scss'
 })
 export class DomainComponent {
+
+  constructor(private readonly router: Router){}
 
   //colonne della table per mostrare i subscriber online
   displayedColumns: string[] = ['domain'];
@@ -17,5 +21,13 @@ export class DomainComponent {
     {domain: 'Internet Explorer'},
     {domain: 'Brave'},
   ];
+
+  createOrDelete(event: CreateDeleteModel): void {
+    if(event.create) {
+      this.router.navigate([`${this.router.url}/create`]);
+    } else {
+      console.log('goto to delete')
+    }
+  }
 
 }
