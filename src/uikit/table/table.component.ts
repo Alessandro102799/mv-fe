@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -12,7 +13,7 @@ export class TableComponent implements AfterViewInit, OnInit{
   //serve per mostrare i nomi delle colonne all'interno delle colonne
   @Input() displayedColumns: string[] = [];
 
-  @Input() elementForTable: any[] = [];
+  @Input() elementForTable: Observable<any[]> = of([]) ;
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
@@ -20,7 +21,8 @@ export class TableComponent implements AfterViewInit, OnInit{
   dataSource = new MatTableDataSource<any[]>();
   
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<any[]>(this.elementForTable);
+    this.elementForTable.subscribe(p => this.dataSource = new MatTableDataSource<any[]>(p))
+    //this.dataSource = new MatTableDataSource<any[]>(this.elementForTable);
   }
 
   ngAfterViewInit() {

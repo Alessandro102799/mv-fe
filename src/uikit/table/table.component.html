@@ -14,6 +14,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <div *ngIf="dataSource.data.length === 0" class="no-data">No Data.</div>
     <mat-paginator [pageSizeOptions]="[5, 10]"
                     showFirstLastButtons
                     aria-label="Select page of periodic elements"

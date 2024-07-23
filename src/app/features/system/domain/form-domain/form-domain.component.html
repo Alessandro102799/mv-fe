@@ -1,10 +1,13 @@
-
-<form>
+<form [formGroup]="fg">
     <div class="container">
-        <mat-form-field>
-            <mat-label class="label">Domain*</mat-label>
-            <input class="input-text" matInput placeholder="E.g. {DOMAIN}" >
-        </mat-form-field>
-        <mat-checkbox></mat-checkbox>
+        <div class="container-form">
+            <mat-form-field class="form-field">
+                <mat-label class="label">Domain</mat-label>
+                <input formControlName="domain" class="input-text" matInput placeholder="E.g. {DOMAIN}" >
+                <mat-error *ngIf="fg.get('domain')?.hasError('required')">Domain Required</mat-error>
+            </mat-form-field> 
+            <mat-checkbox formControlName="branch" class="checkbox">Branch Office</mat-checkbox>
+        </div>
+        <app-button-create-save (click)="sendForm()" icon="fa fa-plus" text="Create"></app-button-create-save>
     </div>
 </form>

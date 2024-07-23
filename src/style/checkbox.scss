@@ -1,0 +1,26 @@
+@import '../style/colors.scss';
+
+//è la dimensione della checkbox
+::ng-deep .mdc-checkbox  {
+    transform: scale(2) !important;
+    border-color: red !important;
+}
+
+
+//al passaggio del mouse sulla checkbox non c'è nessun colore
+::ng-deep .mdc-checkbox__ripple {
+    border-radius: none !important;
+    color: transparent !important;
+    background-color: transparent !important;
+}
+
+//il colore del background della checkbox
+::ng-deep .mdc-checkbox__checkmark{
+    background-color: $primary !important;
+    border-color: $primary !important;
+}
+
+//il border della checkbox
+::ng-deep .mdc-checkbox__background {
+    border: 1px solid $black !important;
+}
