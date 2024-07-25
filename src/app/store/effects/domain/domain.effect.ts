@@ -53,7 +53,6 @@ export class DomainEffect {
             ofType(CreateDomainError),
             map((action) => {
                 this.snackbar.errorSnackbar(action.message);
-                this.location.back();
             })
             );
         },
