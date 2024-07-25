@@ -5,7 +5,7 @@ import { MutateDomainDTO } from "../../dto/domain/mutate.domain.dto";
 @Injectable({
     providedIn: 'root'
   })
-export class SubscriberMapper {
+export class DomainMapperMutate {
     
   fromModelToDTO(domain: MutateDomainModel): MutateDomainDTO {
     return {

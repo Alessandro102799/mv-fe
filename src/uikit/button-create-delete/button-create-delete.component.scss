@@ -1,6 +1,5 @@
 @import '../../style/colors.scss';
 @import '../../style/window-component.scss';
-
 .container-buttons {
     display: flex;
     justify-content: flex-end;
@@ -9,6 +8,10 @@
         display: flex;
         width: 21rem;
         justify-content: space-between;
+
+        .disabled-create {
+            background-color: $color_disabled !important;
+        }
 
         .create {
             width: 10rem;
@@ -32,6 +35,23 @@
                 font-size: 20px;
                 color: $white;
                 font-weight: bold;
+            }
+        }
+
+        .disabled-delete {
+            background-color: $color_disabled !important;
+            border-color: $color_disabled !important;
+
+            .fa-trash {
+                font-size: 20px !important;
+                color: $white !important;
+            }
+    
+            .text-delete {
+                margin-top: 5px !important;
+                font-size: 20px !important;
+                color: $white !important;
+                font-weight: bold !important;
             }
         }
     

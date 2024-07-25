@@ -1,5 +1,5 @@
 <div class="body-container">
     <app-title-page title="Domains"></app-title-page>
     <app-button-create-delete (createOrDelete)="createOrDelete($event)" ></app-button-create-delete>
-    <app-table [displayedColumns]="displayedColumns" [elementForTable]="domains$"></app-table>
+    <app-table (delete)="deleteElemets($event)" [startDelete]="startDelete" [containsCheckbox]="true" [displayedColumns]="displayedColumns" [elementForTable]="domains$"></app-table>
 </div>

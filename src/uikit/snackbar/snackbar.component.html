@@ -1,4 +1,22 @@
-<div class="container">
-    <i class="{{data.icon}} icon"></i>
-    <span class="message">{{data.message}}</span>
-</div>
+@if(!data.icon.includes('triangle')) {
+    <div class="container-success">
+        <div class="container-icon-success">
+            <i class="{{data.icon}} icon-success"></i>
+        </div>
+        <div class="container-message-success">
+            <span class="message-success">{{'SUCCESS!'}}</span>
+            <span class="sub-message-success">{{data.message}}</span>
+        </div>
+    </div>
+} @else {
+    <div class="container-error">
+        <div class="container-icon-error">
+            <i class="{{data.icon}} icon-error"></i>
+        </div>
+        <div class="container-message-error">
+            <span class="message-error">{{'ERROR!'}}</span>
+            <span class="sub-message-error">{{data.message}}</span>
+        </div>
+    </div>
+}
+

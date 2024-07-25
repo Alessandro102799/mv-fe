@@ -1,12 +1,15 @@
 <div class="container">
-    <table mat-table [dataSource]="dataSource" class="container-table">
+    <table mat-table [dataSource]="elementForTable" class="container-table">
         <ng-container *ngFor="let nameColumn of displayedColumns; let i = index " matColumnDef="{{displayedColumns[i]}}">
-            <th mat-header-cell *matHeaderCellDef class="name-column"> {{convertCamelCaseToSpaces(nameColumn) | titlecase}} </th>
+            <th mat-header-cell *matHeaderCellDef class="name-column"><mat-checkbox *ngIf="i == 0 && containsCheckbox === true"></mat-checkbox>{{convertCamelCaseToSpaces(nameColumn) | titlecase}}</th>
             <td mat-cell *matCellDef="let element"> 
                 @if(nameColumn === 'status') {
                     <div class="status-online"></div>
                 } @else {
-                    {{element[displayedColumns[i]]}}
+                    <div class="elements">
+                        <mat-checkbox (change)="checkboxValue(element.id)" *ngIf="i==0 && containsCheckbox === true" [value]="element.id"></mat-checkbox>
+                        {{element[displayedColumns[i]]}}
+                    </div>
                 }
             </td>
         </ng-container>
@@ -15,9 +18,10 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <div *ngIf="dataSource.data.length === 0" class="no-data">No Data.</div>
-    <mat-paginator [pageSizeOptions]="[5, 10]"
-                    showFirstLastButtons
-                    aria-label="Select page of periodic elements"
-                    class="container-paginator">
+    <mat-paginator 
+        [pageSizeOptions]="[5, 10]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+        class="container-paginator">
     </mat-paginator>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CreateDeleteModel } from '../../shared/model/button-create-delete/create-delete.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { CreateDeleteModel } from '../../shared/model/button-create-delete/creat
   styleUrl: './button-create-delete.component.scss'
 })
 
-export class ButtonCreateDeleteComponent {
+export class ButtonCreateDeleteComponent{
 
   //serve per emittare al componente padre il valore create o delete
   @Output() createOrDelete: EventEmitter<CreateDeleteModel> = new EventEmitter<CreateDeleteModel>();

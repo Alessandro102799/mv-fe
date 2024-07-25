@@ -21,4 +21,8 @@ export class DomainService {
     get(): Observable<PaginationDTO> {
         return this.client.get(`${RESOURCE}/allForUser?userId=0`);
     }
+
+    delete(ids: Array<number>): Observable<void | null> {
+        return this.client.delete(ids.length > 1 ? `${RESOURCE}?ids=${ids}` : `${RESOURCE}/${ids}`);
+    }
 }

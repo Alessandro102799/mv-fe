@@ -17,3 +17,10 @@ export const GetDomains = createAction(`${ACTION_KEY} Get Domains`);
 export const GetDomainsSuccess = createAction(`${ACTION_KEY} Get Domains Success`, props<{domains: ReadDomainModel[]}>());
 
 export const GetDomainsError = createAction(`${ACTION_KEY} Get Domains Error`, props<{message: string}>());
+
+//DELETE DOMAINS
+export const DeleteDomain = createAction(`${ACTION_KEY} Delete Domain`, props<{ids: Array<number>}>());
+
+export const DeleteDomainSuccess = createAction(`${ACTION_KEY} Delete Domain Success`);
+
+export const DeleteDomainError = createAction(`${ACTION_KEY} Delete Domain Error`, props<{message: string}>());

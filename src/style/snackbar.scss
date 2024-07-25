@@ -1,14 +1,26 @@
+@import '../style/colors.scss';
+
 .success-snackbar {
     margin-top: 10% !important;
     transform: scale(1) !important;
-    --mdc-snackbar-container-color: rgba(0, 145, 0, 0.925) !important;
-    --mdc-snackbar-container-shape: 1rem !important
+    --mdc-snackbar-container-color: #dcf3d6 !important;
+    --mdc-snackbar-container-shape: 1rem !important;
+
+    .mdc-snackbar__surface {
+        border: 0.1rem solid #c7e0be !important;
+    }
 }
+
+
 
 .error-snackbar {
     margin-top: 10% !important;
     transform: scale(1) !important;
-    --mdc-snackbar-container-color: rgba(159, 7, 2, 0.925) !important;
-    --mdc-snackbar-container-shape: 1rem !important
+    --mdc-snackbar-container-color: #eec8c5 !important;
+    --mdc-snackbar-container-shape: 1rem !important;
+
+    .mdc-snackbar__surface {
+        border: 0.1rem solid #c89296 !important;
+    }
 }
 

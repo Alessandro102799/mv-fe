@@ -8,7 +8,7 @@ import { SnackbarComponent } from "../../../uikit/snackbar/snackbar.component";
 })
  export class SnackbarService {
   private configSuccess: MatSnackBarConfig = {
-    duration: 5000000,
+    duration: 3000,
     horizontalPosition: 'center',
     verticalPosition: 'top',
     panelClass: ['success-snackbar'],

@@ -5,7 +5,7 @@ import { ReadDomainDTO } from "../../dto/domain/read.domain.dto";
 @Injectable({
     providedIn: 'root'
   })
-export class DomainMapper {
+export class DomainMapperRead {
     
   fromModelToDTO(domain: ReadDomainModel): ReadDomainDTO {
     return {
