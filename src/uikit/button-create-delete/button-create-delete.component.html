@@ -4,7 +4,7 @@
             <i class="fal fa-plus"></i>
             <span class="text-create">Create New</span>
         </button>
-        <button class="delete" (click)="delete()">
+        <button class="delete" (click)="delete()" [disabled]="disabled" [ngClass]="{'disabled-delete' : disabled}">
             <i class="fal fa-trash"></i>
             <span class="text-delete">Delete</span>
         </button>
