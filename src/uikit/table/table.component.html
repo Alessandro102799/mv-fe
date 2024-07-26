@@ -9,6 +9,9 @@
                     <div class="elements">
                         <mat-checkbox (change)="checkboxValue(element.id)" *ngIf="i==0 && containsCheckbox === true" [value]="element.id"></mat-checkbox>
                         {{element[displayedColumns[i]]}}
+                        <button class="update" *ngIf="actions && i == displayedColumns.length - 1" (click)="goToUpdate()">
+                            <i class="fal fa-pencil"></i>
+                        </button>
                     </div>
                 }
             </td>
@@ -18,10 +21,10 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <div *ngIf="dataSource.data.length === 0" class="no-data">No Data.</div>
-    <mat-paginator 
+    <!-- <mat-paginator 
         [pageSizeOptions]="[5, 10]"
         showFirstLastButtons
         aria-label="Select page of periodic elements"
         class="container-paginator">
-    </mat-paginator>
+    </mat-paginator> -->
 </div>

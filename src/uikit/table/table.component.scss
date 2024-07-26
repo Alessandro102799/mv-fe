@@ -48,3 +48,14 @@
 ::ng-deep .mdc-checkbox  {
     transform: scale(1) !important;
 }
+
+.update {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+} 

@@ -13,6 +13,7 @@ export class TableComponent implements AfterViewInit, OnInit{
   //serve per mostrare i nomi delle colonne all'interno delle colonne
   @Input() displayedColumns: string[] = [];
   @Input() containsCheckbox: boolean = false;
+  @Input() actions: boolean = false;
   @Input() elementForTable: Observable<any[]> = of([]) ;
   @Input() startDelete: boolean = false;
 
@@ -51,5 +52,9 @@ export class TableComponent implements AfterViewInit, OnInit{
       this.elementsForDelete = this.elementsForDelete.filter(item => item !== id)
     }
     this.delete.emit(this.elementsForDelete);
+  }
+
+  goToUpdate(): void {
+    console.log('prova')
   }
 }

@@ -18,7 +18,7 @@ export class DomainComponent implements OnInit {
   constructor(private readonly router: Router, private readonly store: Store, private snackbar: SnackbarService){}
 
   //colonne della table per mostrare i subscriber online
-  displayedColumns: string[] = ['domain', 'branch'];
+  displayedColumns: string[] = ['domain', 'branch', 'actions'];
 
   //array per memorizzare array di ids da eliminare
   ids: Array<number> = [];
