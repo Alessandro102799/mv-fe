@@ -79,3 +79,45 @@
         }
     }    
 }
+
+.container-warning{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    //align-items: baseline;
+
+    .container-icon-warning {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #f8f4c4;
+        background-color: #e9e5a7;
+        border-radius: 50%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon-warning {
+            font-size: 20px;
+            color: #9b7f41;
+            border-color: #9b7f41;
+        } 
+    }
+
+    .container-message-warning {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        .message-warning {
+            font-size: 20px;
+            color: #9b7f41;
+            font-family: 'system-ui';
+        }
+
+        .sub-message-warning {
+            color: #9b7f41;
+        }
+    }    
+}

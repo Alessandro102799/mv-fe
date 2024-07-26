@@ -79,7 +79,7 @@ export class DomainEffect {
             exhaustMap((action) => 
                 this.service.delete(action.ids).pipe(
                     map(() => DeleteDomainSuccess()),
-                    catchError((error: HttpErrorResponse) => of(DeleteDomainError({message: errorCode.get(error.error.errorCode) as string})))
+                    catchError((error: HttpErrorResponse) => of(DeleteDomainError({message: errorCode.get(error.error.errorCode) as string, ids: action.ids})))
                 )
             )
         )
@@ -89,7 +89,7 @@ export class DomainEffect {
         return this.actions$.pipe(
             ofType(DeleteDomainSuccess),
             map(() => {
-                this.snackbar.successSnackbar('Domains Successfully Deleted')
+                this.snackbar.successSnackbar('Domain(s) Successfully Deleted')
                 return GetDomains();
             })
         )
@@ -98,8 +98,8 @@ export class DomainEffect {
     deleteDomainsError$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(DeleteDomainError),
-            map(() => {
-                this.snackbar.errorSnackbar('Domains Error Deleted');
+            map((action) => {
+                action.ids.length > 0 ?  this.snackbar.errorSnackbar('Domain(s) Error Deleted') : this.snackbar.warningSnackbar('Domain(s) Not Selected');
             })
         )
     }, {dispatch: false})

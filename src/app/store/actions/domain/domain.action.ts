@@ -23,4 +23,4 @@ export const DeleteDomain = createAction(`${ACTION_KEY} Delete Domain`, props<{i
 
 export const DeleteDomainSuccess = createAction(`${ACTION_KEY} Delete Domain Success`);
 
-export const DeleteDomainError = createAction(`${ACTION_KEY} Delete Domain Error`, props<{message: string}>());
+export const DeleteDomainError = createAction(`${ACTION_KEY} Delete Domain Error`, props<{message: string, ids: Array<number>}>());

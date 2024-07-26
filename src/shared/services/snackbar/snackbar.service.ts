@@ -21,6 +21,13 @@ import { SnackbarComponent } from "../../../uikit/snackbar/snackbar.component";
     panelClass: ['error-snackbar'],
   };
 
+  private configWarning: MatSnackBarConfig = {
+    duration: 3000,
+    horizontalPosition: 'center',
+    verticalPosition: 'top',
+    panelClass: ['warning-snackbar'],
+  };
+
   constructor(private readonly snackbar: MatSnackBar) {}
 
   public errorSnackbar(message: string) {
@@ -29,6 +36,10 @@ import { SnackbarComponent } from "../../../uikit/snackbar/snackbar.component";
 
   public successSnackbar(message: string) {
     this.openCustomSnackBar(message, 'fa fa-check', this.configSuccess)
+  }
+
+  public warningSnackbar(message: string) {
+    this.openCustomSnackBar(message, 'fa fa-exclamation', this.configWarning)
   }
 
   openCustomSnackBar(message: string, icon: string, config: MatSnackBarConfig) {

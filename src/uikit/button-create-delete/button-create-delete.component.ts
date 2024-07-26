@@ -12,9 +12,6 @@ export class ButtonCreateDeleteComponent{
   //serve per emittare al componente padre il valore create o delete
   @Output() createOrDelete: EventEmitter<CreateDeleteModel> = new EventEmitter<CreateDeleteModel>();
 
-  @Input() disabled: boolean = true;
-
-
   create(): void {
     this.createOrDelete.emit({create: true, delete: false });
   }

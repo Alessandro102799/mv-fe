@@ -6,12 +6,9 @@
                 @if(nameColumn === 'status') {
                     <div class="status-online"></div>
                 } @else {
-                    <div class="elements">
-                        <mat-checkbox (change)="checkboxValue(element.id)" *ngIf="i==0 && containsCheckbox === true" [value]="element.id"></mat-checkbox>
+                    <div class="elements" (click)="goToUpdate(element)">
+                        <mat-checkbox (click)="$event.stopPropagation()" (change)="checkboxValue(element.id)" *ngIf="i==0 && containsCheckbox === true" [value]="element.id"></mat-checkbox>
                         {{element[displayedColumns[i]]}}
-                        <button class="update" *ngIf="actions && i == displayedColumns.length - 1" (click)="goToUpdate()">
-                            <i class="fal fa-pencil"></i>
-                        </button>
                     </div>
                 }
             </td>

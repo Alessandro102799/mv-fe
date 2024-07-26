@@ -1,12 +1,11 @@
 <div class="body-container">
     <app-title-page title="Domains"></app-title-page>
-    <app-button-create-delete [disabled]="ids.length === 0 ? true : false" (createOrDelete)="createOrDelete($event)" ></app-button-create-delete>
+    <app-button-create-delete (createOrDelete)="createOrDelete($event)" ></app-button-create-delete>
     <app-table 
         (delete)="deleteElemets($event)"
         [startDelete]="startDelete"  
         [containsCheckbox]="true" 
         [displayedColumns]="displayedColumns" 
-        [elementForTable]="domains$"
-        [actions]="true">
+        [elementForTable]="domains$">
     </app-table>
 </div>

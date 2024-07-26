@@ -18,12 +18,12 @@ export class DomainComponent implements OnInit {
   constructor(private readonly router: Router, private readonly store: Store, private snackbar: SnackbarService){}
 
   //colonne della table per mostrare i subscriber online
-  displayedColumns: string[] = ['domain', 'branch', 'actions'];
+  displayedColumns: string[] = ['domain', 'branch'];
 
   //array per memorizzare array di ids da eliminare
   ids: Array<number> = [];
 
-  //varaibile che serve per gestire la delete
+  //variabile che serve per gestire la delete
   startDelete: boolean = false;
   
   //elementi per adesso mockati da passare come paramentro al component della table per popolare la tabella

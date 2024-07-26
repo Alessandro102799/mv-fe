@@ -1,4 +1,4 @@
-@if(!data.icon.includes('triangle')) {
+@if(data.icon.includes('check')) {
     <div class="container-success">
         <div class="container-icon-success">
             <i class="{{data.icon}} icon-success"></i>
@@ -8,7 +8,7 @@
             <span class="sub-message-success">{{data.message}}</span>
         </div>
     </div>
-} @else {
+} @else if(data.icon.includes('triangle')) {
     <div class="container-error">
         <div class="container-icon-error">
             <i class="{{data.icon}} icon-error"></i>
@@ -18,5 +18,16 @@
             <span class="sub-message-error">{{data.message}}</span>
         </div>
     </div>
+} @else if(data.icon.includes('exclamation')) {
+    <div class="container-warning">
+        <div class="container-icon-warning">
+            <i class="{{data.icon}} icon-warning"></i>
+        </div>
+        <div class="container-message-warning">
+            <span class="message-warning">{{'WARNING!'}}</span>
+            <span class="sub-message-warning">{{data.message}}</span>
+        </div>
+    </div>
 }
+
 
