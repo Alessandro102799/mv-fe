@@ -11,6 +11,7 @@ import { AuthenticationComponent } from './features/authentication/authenticatio
 import { SystemComponent } from './features/system/system.component';
 import { DomainComponent } from './features/system/domain/list-domain/domain.component';
 import { CreateDomainComponent } from './features/system/domain/create-domain/create-domain.component';
+import { UpdateDomainComponent } from './features/system/domain/update-domain/update-domain.component';
 
 //ogni volta che dobbiamo aggiungere una rotta
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   //DOMAIN: LIST, CREATE AND UPDTATE
   {path: 'system/domain', component: DomainComponent},
   {path: 'system/domain/create', component: CreateDomainComponent},
+  {path: 'system/domain/update/:id', component: UpdateDomainComponent},
   {path: 'info', component: InfoComponent}
 ];
 

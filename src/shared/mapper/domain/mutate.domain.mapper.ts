@@ -9,6 +9,7 @@ export class DomainMapperMutate {
     
   fromModelToDTO(domain: MutateDomainModel): MutateDomainDTO {
     return {
+      id: domain.id,
       domain: domain.domain,
       branch: domain.branch,
       organizationId: domain.organizationId

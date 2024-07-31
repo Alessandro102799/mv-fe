@@ -19,6 +19,9 @@ export class TableComponent implements AfterViewInit, OnInit{
   //serve per mandare ai componentit che utilizzano la table tutti gli id delle checkbox selezionate per effettuare la delete
   @Output() delete: EventEmitter<Array<number>> = new EventEmitter<Array<number>>();
 
+  //serve per mandare ai componentit che utilizzano la table tutti gli id delle checkbox selezionate per effettuare l'update
+  @Output() update: EventEmitter<number> = new EventEmitter<number>();
+
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
   //dataSource serve per andare a popolare la tabella
@@ -53,7 +56,7 @@ export class TableComponent implements AfterViewInit, OnInit{
     this.delete.emit(this.elementsForDelete);
   }
 
-  goToUpdate(row: Event): void {
-    console.log(row)
+  sendIdToUpdate(id: number): void {
+    this.update.emit(id)
   }
 }

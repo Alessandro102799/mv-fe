@@ -28,6 +28,7 @@ import { SubmenuComponent } from './features/sidenav/submenu/submenu.component';
 import { DomainComponent } from './features/system/domain/list-domain/domain.component';
 import { CreateDomainComponent } from './features/system/domain/create-domain/create-domain.component';
 import { FormDomainComponent } from './features/system/domain/form-domain/form-domain.component';
+import { UpdateDomainComponent } from './features/system/domain/update-domain/update-domain.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FormDomainComponent } from './features/system/domain/form-domain/form-d
     SubmenuComponent,
     DomainComponent,
     CreateDomainComponent,
-    FormDomainComponent
+    FormDomainComponent,
+    UpdateDomainComponent
   ],
   imports: [
     UikitModule,

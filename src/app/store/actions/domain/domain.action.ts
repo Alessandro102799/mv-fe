@@ -11,6 +11,13 @@ export const CreateDomainSuccess = createAction(`${ACTION_KEY} Create Domain Suc
 
 export const CreateDomainError = createAction(`${ACTION_KEY} Create Domain Error`, props<{message: string}>());
 
+//UPDATE DOMAIN
+export const UpdateDomain = createAction(`${ACTION_KEY} Update Domain`, props<{domain: MutateDomainModel}>());
+
+export const UpdateDomainSuccess = createAction(`${ACTION_KEY} Update Domain Success`, props<{domain: MutateDomainModel}>());
+
+export const UpdateDomainError = createAction(`${ACTION_KEY} Update Domain Error`, props<{message: string}>());
+
 //GET DOMAINS
 export const GetDomains = createAction(`${ACTION_KEY} Get Domains`);
 

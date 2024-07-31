@@ -43,9 +43,13 @@ export class DomainComponent implements OnInit {
     this.store.dispatch(GetDomains())
   }
 
-  deleteElemets(ids: Array<number>): void {
+  deleteElements(ids: Array<number>): void {
     this.startDelete = false;
     this.ids = ids;
+  }
+
+  update(id: number): void {
+    this.router.navigate([`${this.router.url}/update/${id}`]);
   }
 
 }

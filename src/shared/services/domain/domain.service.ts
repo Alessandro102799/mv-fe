@@ -18,6 +18,10 @@ export class DomainService {
         return this.client.post(`${RESOURCE}`, domain)
     }
 
+    update(domain: MutateDomainDTO): Observable<ReadDomainDTO> {
+        return this.client.put(`${RESOURCE}/${domain.id}`, domain)
+    }
+
     get(): Observable<PaginationDTO> {
         return this.client.get(`${RESOURCE}/allForUser?userId=0`);
     }

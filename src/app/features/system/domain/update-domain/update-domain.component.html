@@ -1,0 +1,4 @@
+<div class="body-container">
+    <app-title-page title="Update Domain"></app-title-page>
+    <app-form-domain [domain]="domain$ | async" (mutateForm)="update($event)"></app-form-domain>
+</div>

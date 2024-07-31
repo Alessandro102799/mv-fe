@@ -7,3 +7,9 @@ const selectStateDomain = createFeatureSelector<StateDomain>(domainFeatureKey);
 
 //selettore per prendere tutti i domini esistenti
 export const selectDomains = createSelector(selectStateDomain, (state: StateDomain): ReadDomainModel[] => state.domains);
+
+//selettore per prendere il dominio passato a paramentro
+export const selectDomainById = (id: string | null)  => createSelector(
+    selectStateDomain, (state: StateDomain): ReadDomainModel => 
+        state.domains.find(domain => domain.id === Number(id)) as ReadDomainModel
+);

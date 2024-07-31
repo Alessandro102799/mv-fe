@@ -2,7 +2,8 @@
     <app-title-page title="Domains"></app-title-page>
     <app-button-create-delete (createOrDelete)="createOrDelete($event)" ></app-button-create-delete>
     <app-table 
-        (delete)="deleteElemets($event)"
+        (delete)="deleteElements($event)"
+        (update)="update($event)"
         [startDelete]="startDelete"  
         [containsCheckbox]="true" 
         [displayedColumns]="displayedColumns" 

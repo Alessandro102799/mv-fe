@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { CreateDomain, CreateDomainError, CreateDomainSuccess, GetDomains, GetDomainsError, GetDomainsSuccess, DeleteDomain, DeleteDomainError, DeleteDomainSuccess } from "../../actions/domain/domain.action";
+import { CreateDomain, CreateDomainError, CreateDomainSuccess, GetDomains, GetDomainsError, GetDomainsSuccess, DeleteDomain, DeleteDomainError, DeleteDomainSuccess, UpdateDomain, UpdateDomainSuccess, UpdateDomainError } from "../../actions/domain/domain.action";
 import { catchError, exhaustMap, map, of } from "rxjs";
 import { DomainService } from "../../../../shared/services/domain/domain.service";
 import { MutateDomainModel } from "../../../../shared/model/domain/mutate.domain.model";
@@ -19,7 +19,7 @@ import { DomainMapperMutate } from "../../../../shared/mapper/domain/mutate.doma
 
 export class DomainEffect {
 
-    //create domain
+//INIZIO CREATE
     createDomain$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(CreateDomain),
@@ -32,7 +32,6 @@ export class DomainEffect {
         )
     })
 
-    //create domain success
     postDomainSuccess$ = createEffect(
         () => {
           return this.actions$.pipe(
@@ -46,7 +45,6 @@ export class DomainEffect {
         { dispatch: false }
     );
 
-    //create domain error
     postDomainError$ = createEffect(
         () => {
             return this.actions$.pipe(
@@ -58,8 +56,48 @@ export class DomainEffect {
         },
         { dispatch: false }
     );
+//FINE CREATE
 
-    //get domains
+//INIZIO UPDATE
+    updateDomain$ = createEffect(() => {
+        return this.actions$.pipe(
+            ofType(UpdateDomain),
+            exhaustMap((action) => 
+                this.service.update(this.mapperMutate.fromModelToDTO(action.domain)).pipe(
+                    map((domain: MutateDomainModel) => { return UpdateDomainSuccess({domain})}),
+                    catchError((error: HttpErrorResponse) => of(UpdateDomainError({message: errorCode.get(error.error.errorCode) as string})))
+                )
+            )
+        )
+    })
+
+    updateDomainSuccess$ = createEffect(
+        () => {
+        return this.actions$.pipe(
+            ofType(UpdateDomainSuccess),
+            map(() => {
+                this.snackbar.successSnackbar('Domain Successfully Updated');
+                this.location.back();
+            })
+        );
+        },
+        { dispatch: false }
+    );
+
+    updateDomainError$ = createEffect(
+        () => {
+            return this.actions$.pipe(
+            ofType(UpdateDomainError),
+            map((action) => {
+                this.snackbar.errorSnackbar(action.message);
+            })
+            );
+        },
+        { dispatch: false }
+    );
+//FINE CREATE
+
+//INZIO GET
     getDomains$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(GetDomains),
@@ -71,8 +109,9 @@ export class DomainEffect {
             ))
         )
     })
+//FINE GET
 
-    //delete domains
+//INIZIO DELETE
     deleteDomains$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(DeleteDomain),
@@ -104,6 +143,7 @@ export class DomainEffect {
         )
     }, {dispatch: false})
     
+//FINE DELETE
 
     constructor(
         private readonly actions$: Actions,
