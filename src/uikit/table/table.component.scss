@@ -6,10 +6,23 @@
     background-color: $color_window;
     padding: 2rem 2rem 0 2rem;
     border-radius: 1rem;
-    margin-top: 1%; //serve per distanziare la table dall cards
+    margin-top: 1%; //serve per distanziare la table dalle cards
     .container-table {
         width: 100%;
         background-color: $color_window;
+
+        .status-online {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $status_online;
+            animation:1.5s blinker linear infinite;
+        }
+
+        .name-column {
+            font-size: 15px;
+            color: $color_placeholder;
+        }
     }
 
     .container-paginator {
@@ -21,22 +34,9 @@
     }
 }
 
-.name-column {
-    font-size: 15px;
-    color: $color_placeholder;
-}
-
 .mat-mdc-row:hover {
     cursor: pointer;
     background-color: $white;
-}
-
-.status-online {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: $status_online;
-    animation:1.5s blinker linear infinite;
 }
 
 @keyframes blinker {
@@ -48,14 +48,3 @@
 ::ng-deep .mdc-checkbox  {
     transform: scale(1) !important;
 }
-
-.update {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-} 
