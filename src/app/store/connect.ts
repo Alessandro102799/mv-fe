@@ -5,9 +5,11 @@ import {Buffer} from 'buffer';
 import { DomainEffect } from "./effects/domain/domain.effect";
 import { domainFeatureKey, reducerDomain } from "./reducers/domain/domain.reducer";
 import { StateDomain } from "./reducers/domain/domain.state";
+import { SubscriberEffect } from "./effects/subscribers/subscriber.effect";
 
 export const NGRX_EFFECTS = [
-    DomainEffect
+    DomainEffect,
+    SubscriberEffect
 ]
 
 export interface IAppState {

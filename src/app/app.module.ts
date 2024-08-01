@@ -29,6 +29,7 @@ import { DomainComponent } from './features/system/domain/list-domain/domain.com
 import { CreateDomainComponent } from './features/system/domain/create-domain/create-domain.component';
 import { FormDomainComponent } from './features/system/domain/form-domain/form-domain.component';
 import { UpdateDomainComponent } from './features/system/domain/update-domain/update-domain.component';
+import { ListSubscribersComponent } from './features/subscribers/subscribers/list-subscribers/list-subscribers.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { UpdateDomainComponent } from './features/system/domain/update-domain/up
     CreateDomainComponent,
     FormDomainComponent,
     UpdateDomainComponent,
+    ListSubscribersComponent,
   ],
   imports: [
     UikitModule,

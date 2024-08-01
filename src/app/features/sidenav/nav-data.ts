@@ -31,7 +31,7 @@ export const navbarData: MenuModel[] = [
         expanded: false,
         submenu: [
             {
-                routerLink: 'subscribers',
+                routerLink: 'subscribers/subscribers',
                 label: 'Subscribers'
             }
         ]

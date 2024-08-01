@@ -12,6 +12,7 @@ import { SystemComponent } from './features/system/system.component';
 import { DomainComponent } from './features/system/domain/list-domain/domain.component';
 import { CreateDomainComponent } from './features/system/domain/create-domain/create-domain.component';
 import { UpdateDomainComponent } from './features/system/domain/update-domain/update-domain.component';
+import { ListSubscribersComponent } from './features/subscribers/subscribers/list-subscribers/list-subscribers.component';
 
 //ogni volta che dobbiamo aggiungere una rotta
 const routes: Routes = [
@@ -29,7 +30,10 @@ const routes: Routes = [
   {path: 'system/domain', component: DomainComponent},
   {path: 'system/domain/create', component: CreateDomainComponent},
   {path: 'system/domain/update/:id', component: UpdateDomainComponent},
-  {path: 'info', component: InfoComponent}
+  {path: 'info', component: InfoComponent},
+
+  //SUBSCRIBERS: LIST, CREATE AND UPDTATE
+  {path: 'subscribers/subscribers', component: ListSubscribersComponent},
 ];
 
 @NgModule({
